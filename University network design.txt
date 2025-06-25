@@ -1,0 +1,178 @@
+  R1
+-------------------
+int se0/0/0
+no sh
+exit
+int se0/0/1
+no sh
+exit
+int gig0/0
+no sh
+exit
+
+int seo/0/0
+clock rate 64000
+int se0/0/1
+clock rate 64000
+exit
+
+
+
+R2
+--------------
+int se0/0/0
+no sh
+exit
+
+int gig0/0
+no sh
+exit
+
+R3
+---------------
+int se0/0/0
+no sh
+exit
+
+int gig0/0
+no sh
+exit
+
+
+
+============================
+vlan conf
+---------------
+Admin
+_________________
+en 
+conf t
+int range fa0/1-24
+switchport mode access
+switchport access vlan 10
+
+en 
+conf t
+int gig1/0/1
+switchport mode access
+switchport access vlan 10
+
+HR
+______________________
+en 
+conf t
+int range fa0/1-24
+switchport mode access
+switchport access vlan 20
+
+int gig1/0/2
+switchport mode access
+switchport access vlan 20
+
+Finance
+________________________
+en 
+conf t
+int range fa0/1-24
+switchport mode access
+switchport access vlan 30
+
+int gig1/0/3
+switchport mode access
+switchport access vlan 30
+
+Busines
+________________________
+en 
+conf t
+int range fa0/1-24
+switchport mode access
+switchport access vlan 40
+
+int gig1/0/4
+switchport mode access
+switchport access vlan 40
+
+E&C
+________________________
+en 
+conf t
+int range fa0/1-24
+switchport mode access
+switchport access vlan 50
+
+int gig1/0/5
+switchport mode access
+switchport access vlan 50
+
+A&D
+________________________
+en 
+conf t
+int range fa0/1-24
+switchport mode access
+switchport access vlan 60
+
+int gig1/0/6
+switchport mode access
+switchport access vlan 60
+
+Student Lab
+_________________________
+en 
+conf t
+int range fa0/1-24
+switchport mode access
+switchport access vlan 70
+
+int gig1/0/7
+switchport mode access
+switchport access vlan 70
+
+IT Dept.
+_________________________
+en 
+conf t
+int range fa0/1-24
+switchport mode access
+switchport access vlan 80
+
+int gig1/0/8
+switchport mode access
+switchport access vlan 80
+
+Switch are connected in router so command the below line
+int gig1/0/9
+switchport trunk encapsulation dot1q
+switchport mode trunk
+
+Student Lab
+_________________________
+en 
+conf t
+int range fa0/1-24
+switchport mode access
+switchport access vlan 100
+
+int gig1/0/2
+switchport mode access
+switchport access vlan 100
+
+Staff
+_________________________
+en 
+conf t
+int range fa0/1-24
+switchport mode access
+switchport access vlan 90
+
+int gig1/0/3
+switchport mode access
+switchport access vlan 90
+
+Switch are connected in router so command the below line
+int gig1/0/1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+
